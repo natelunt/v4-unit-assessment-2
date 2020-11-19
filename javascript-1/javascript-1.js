@@ -36,7 +36,7 @@ const savannah = ['lion', 'zebra', 'lion', 'giraffe']
 const desert = ['rattlesnake', 'coyote']
 //DO NOT EDIT CODE ABOVE
 
-const animals = [...forest, ocean, savannah, desert]
+const animals = [...forest, ...ocean, ...savannah, ...desert]
 
 
 /*
@@ -175,7 +175,13 @@ const classes = [
     all online classes with no homework.
 */
 
-//CODE HERE
+for (let i = 0; i < classes.length; i++){
+    for(let prop in classes[i]){
+        if(classes[i][prop] === true){
+            classes[i][prop] = false
+        }
+    }
+}
 
   
 ////////////////////PROBLEM 10////////////////////
@@ -191,7 +197,13 @@ const lettersToPair = ['e', 'k', 's', 'a', 'e', 's', 'a', 'n', 'k', 'n']
 let pairsArray = []
 //DO NOT EDIT CODE ABOVE
 
-//CODE HERE
+for (let i = 0; i < lettersToPair.length; i++){
+    for (let n = 0; n < lettersToPair.length; n++){
+        if(lettersToPair[i] === lettersToPair[n]){
+            pairsArray.push([i, n])
+        }
+    }
+}
 
     
 
@@ -232,7 +244,9 @@ const fido = new Dog('Fido', 3, 'Jack Russell', ['sit', 'shake'])
     NAME will come from that context, so you should reference 'this.name' to get the correct name.
 */
 
-bark: function
+function bark(){
+    return `${this.name} says bark!`
+}
 
 
 /*
@@ -240,7 +254,7 @@ bark: function
     and saving the result to a variable called fidoSpeak.
 */
 
-//CODE HERE
+let fidoSpeak = bark.call(fido)
   
   
 ////////////////////PROBLEM 13////////////////////
@@ -251,7 +265,11 @@ bark: function
     Tricks will come from that context, so you should reference 'this.tricks' to access the correct array.
 */
 
-//CODE HERE
+function teachTrick(trick){
+    const tricksArray = []
+    tricksArray.push(trick)
+    return tricksArray
+}
 
 
 /*
@@ -259,7 +277,7 @@ bark: function
     Save the result to a variable called 'teachStay'.
 */
 
-//CODE HERE
+let teachStay = teachTrick.bind(fido, 'stay')
   
   
 ////////////////////PROBLEM 14////////////////////
@@ -270,7 +288,9 @@ bark: function
     Remember to use the 'this' keyword to access values from the context that you will apply.
 */
 
-//CODE HERE
+function dogIntro(treat, toy){
+    return `${this.name} is a ${this.breed} that loves ${this.treat} and their ${this.toy}!`
+}
 
 
 /*
@@ -279,7 +299,7 @@ bark: function
     and save the result to a variable called fidoIntro.
 */
 
-//CODE HERE
+const fidoIntro = dogIntro.apply(fido, ['chicken', 'tennis ball'])
   
 
 ////////////////////PROBLEM 15////////////////////
