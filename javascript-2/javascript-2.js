@@ -35,7 +35,9 @@ let foods = [
   and then adding the results together. 
 */
 
-//CODE HERE
+foods.forEach(function(e, i, a){
+  a[i] = e.carbs * 4 + e.protein * 4 + e.fat * 9
+})
 
 //////////////////////////////////PROBLEMS 2-4//////////////////////////////////
 /*
@@ -80,7 +82,7 @@ const products = [
   Save the copy to a new variable called 'saleProducts'.
 */
 
-//CODE HERE
+let salesProducts = products.map(e => e.price - (e.price * .25))
 
 ////////////////////PROBLEM 3////////////////////
 /*
@@ -90,7 +92,9 @@ const products = [
   (Hint: look up the array method 'includes' on MDN)
 */
 
-//CODE HERE
+let blueProducts = products.filter(function(a){
+  return a.includes('blue')
+})
 
 ////////////////////PROBLEM 4////////////////////
 /*
@@ -99,7 +103,7 @@ const products = [
   Save the result to a variable called orderTotal.
 */
 
-//CODE HERE
+let orderTotal = blueProducts.reduce((acc, curr) => acc + curr);
 
 //////////////////////////////////PROBLEMS 5-8//////////////////////////////////
 /*
@@ -129,7 +133,7 @@ const shippingInfo = {
   that combines the contactInfo and shippingInfo objects.
 */
 
-//CODE HERE
+const helensInfo = {}
 
 ////////////////////PROBLEM 6////////////////////
 /*
@@ -276,7 +280,7 @@ const workout = {
 //let context1 = myFunc
 //let context1 = window
 //let context1 = global
-// let context1 = workout
+ let context1 = workout
 
 ////////////////////PROBLEM 14////////////////////
 /*
@@ -289,6 +293,6 @@ function myFunc() {
 }
 
 //let context2 = myFunc
-// let context2 = window
+ let context2 = window
 //let context2 = global
 //let context2 = workout
